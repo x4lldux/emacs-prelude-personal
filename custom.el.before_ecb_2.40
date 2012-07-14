@@ -1,0 +1,27 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cperl-highlight-variables-indiscriminately t)
+ '(display-time-mode t)
+ '(ecb-auto-activate t)
+ '(ecb-layout-name "left9")
+ '(font-use-system-font t)
+ '(indent-tabs-mode t)
+ '(show-paren-mode t)
+ '(show-paren-style (quote expression))
+ '(tab-always-indent (quote complete)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-lock-variable-name-face ((t (:foreground "green"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "CadetBlue3"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "LemonChiffon"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "RosyBrown"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "PaleGreen2"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "DarkGoldenrod2"))))
+ '(show-paren-match ((t (:underline "#73d216"))))
+ '(show-paren-mismatch ((t (:underline "#ff1f18")))))
