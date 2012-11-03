@@ -3,9 +3,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ack-and-a-half-prompt-for-directory t)
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
+ '(background-color "#fdf6e3")
+ '(background-mode light)
  '(cperl-highlight-variables-indiscriminately t)
+ '(cursor-color "#657b83")
  '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes (quote ("baed08a10ff9393ce578c3ea3e8fd4f8c86e595463a882c55f3bd617df7e5a45" "b7553781f4a831d5af6545f7a5967eb002c8daeee688c5cbf33bf27936ec18b3" "40eba70ee07212464f2c979fffbaea7d05720aefc4f5795276dc69f83c257469" "54d1bcf3fcf758af4812f98eb53b5d767f897442753e1aa468cfeb221f8734f9" default)))
+ '(custom-safe-themes (quote ("82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "be7eadb2971d1057396c20e2eebaa08ec4bfd1efe9382c12917c6fe24352b7c1" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "34543312860bbc58b2fcf4d24a9bdc5c114347f16903ac9d7ae70f3c44616a9e" "baed08a10ff9393ce578c3ea3e8fd4f8c86e595463a882c55f3bd617df7e5a45" "b7553781f4a831d5af6545f7a5967eb002c8daeee688c5cbf33bf27936ec18b3" "40eba70ee07212464f2c979fffbaea7d05720aefc4f5795276dc69f83c257469" "54d1bcf3fcf758af4812f98eb53b5d767f897442753e1aa468cfeb221f8734f9" default)))
+ '(delete-selection-mode nil)
  '(display-time-mode t)
  '(ecb-auto-activate t)
  '(ecb-layout-name "left9")
@@ -21,6 +28,7 @@
  '(fci-rule-color "gainsboro")
  '(fci-rule-column nil)
  '(font-use-system-font t)
+ '(foreground-color "#657b83")
  '(indent-tabs-mode nil)
  '(jabber-alert-info-message-hooks (quote (jabber-info-libnotify jabber-info-display)))
  '(jabber-alert-message-hooks (quote (jabber-message-libnotify jabber-message-echo jabber-message-scroll)))
@@ -31,24 +39,29 @@
  '(jabber-history-enabled t)
  '(jabber-roster-show-title t)
  '(jabber-show-resources nil)
+ '(mark-even-if-inactive t)
  '(minimap-dedicated-window t)
  '(minimap-width-fraction 0.14)
  '(minimap-window-location (quote right))
+ '(nyan-bar-length 16)
+ '(nyan-wavy-trail t)
+ '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(show-paren-style (quote expression))
  '(tab-always-indent (quote complete))
- '(w3m-accept-languages (quote ("pl" "en
-"))))
  '(tab-width 4)
+ '(transient-mark-mode 1)
+ '(w3m-accept-languages (quote ("pl" "en")))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(elscreen-tab-background-face ((t (:background "gray50"))))
- '(elscreen-tab-control-face ((t (:background "gray50" :foreground "black" :underline "Gray50" :weight extra-bold))))
- '(elscreen-tab-current-screen-face ((t (:background "gray39" :foreground "black" :weight extra-bold))))
- '(elscreen-tab-other-screen-face ((t (:background "gray45" :foreground "gray13" :weight normal))))
+ '(elscreen-tab-background-face ((t (:background "gray50"))) t)
+ '(elscreen-tab-control-face ((t (:background "gray50" :foreground "black" :underline "Gray50" :weight extra-bold))) t)
+ '(elscreen-tab-current-screen-face ((t (:background "gray39" :foreground "black" :weight extra-bold))) t)
+ '(elscreen-tab-other-screen-face ((t (:background "gray45" :foreground "gray13" :weight normal))) t)
  '(font-lock-variable-name-face ((t (:foreground "green"))))
  '(mode-line ((t (:background "#2b2b2b" :foreground "deep sky blue" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((t (:inherit mode-line :background "gray25" :foreground "#5f7f5f" :box (:line-width -1 :style released-button) :weight light))))
@@ -57,5 +70,4 @@
  '(rainbow-delimiters-depth-3-face ((t (:foreground "RosyBrown"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "PaleGreen2"))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "DarkGoldenrod2"))))
- '(show-paren-match ((t (:underline "#73d216"))))
- '(show-paren-mismatch ((t (:underline "#ff1f18")))))
+)
