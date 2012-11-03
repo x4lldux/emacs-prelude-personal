@@ -205,6 +205,23 @@
 (autoload 'template-mode "template-mode")
 (setq auto-mode-alist
 (append '(("\\.tt$" . template-mode)) auto-mode-alist ))
+
+(require 'jabber)
+(setq jabber-username "xalldux" ;; notice: leave off the @gmail.com
+      jabber-server "gmail.com"     ;; this is a part of your user ID, not a part of the server you will connect to.
+      jabber-network-server "talk.google.com"  ;; this is the actual server to connect to
+      jabber-port 5223
+      jabber-connection-type 'ssl)
+
+(setq jabber-account-list '(
+                            ("xalldux@gmail.com"
+                             (:password . "hafqocibkanvkwgu")
+                             (:network-server . "talk.google.com")
+                             (:port . 443)
+                             (:connection-type . ssl))
+                            ))
+
+
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "<menu>") 'smex)
