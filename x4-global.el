@@ -191,3 +191,8 @@
 (autoload 'template-mode "template-mode")
 (setq auto-mode-alist
 (append '(("\\.tt$" . template-mode)) auto-mode-alist ))
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "<menu>") 'smex)
+(global-set-key (kbd "M-x") 'smex)
+
