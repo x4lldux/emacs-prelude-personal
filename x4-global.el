@@ -1,6 +1,8 @@
+(setq x4--personal-vendor-path "~/.emacs.d/personal/vendor/")
 (mapc (lambda (pkg)
-	(add-to-list 'load-path (concat "~/.emacs.d/personal/vendor/" pkg)))
-      '("workgroups.el/" "eproject" "emacs-flymake-perlcritic" "nyan-mode" "emacs-skype" "emacs-minimap"))
+        (add-to-list 'load-path (concat x4--personal-vendor-path pkg)))
+      '("workgroups.el/" "eproject" "emacs-flymake-perlcritic" "nyan-mode"
+        "emacs-skype" "emacs-minimap" "emacs-jabber" "myfixme" "golden-ratio.el/"))
 
 (menu-bar-mode t)
 (setq default-frame-alist '((font . "Inconsolata-10")))
@@ -33,8 +35,8 @@
 (setq wg-morph-on nil)
 (workgroups-mode t)
 
-;(require 'skype)
-;(setq skype--my-user-handle "x4lldux")
+;;(require 'skype)
+;;(setq skype--my-user-handle "x4lldux")
 
 (require 'w3m-load)
 (require 'minimap)
@@ -89,7 +91,7 @@
  '(show-paren-mismatch ((t (:underline "#ff1f18")))))
 
 
-					;;(require `notify)
+;;(require `notify)
 
 ;; Fill column indicator
 (setq fill-column 80)
@@ -98,41 +100,50 @@
 ;; (setq fci-rule-color (face-foreground 'default))
 (fci-mode 1)
 
-;; General text-mode personallizations
 (defun x4--after-text-mode ()
   "Execute after text-mode hook"
   (setq scroll-error-top-bottom 1)
-  (prelude-turn-off-whitespace) ;; FIXIT: whitespace-mode works on
+  (whitespace-mode -1)
   (global-whitespace-mode -1)
   (linum-mode 1)
+  (fci-mode 1)
+
   )
-(add-hook 'text-mode-hook 'x4--after-text-mode)
+(add-hook 'prelude-text-mode-hook 'x4--after-text-mode t)
+
+(require 'myfixme)
 
 ;; General programming personallizations
 (defun x4--after-prog-mode ()
   "Execute after programming-mode hook"
-  (prelude-turn-off-whitespace)
-  ;; (flyspell-mode 1)
-  ;; (flyspell-prog-mode 1)
+
+  (message "x4--after-prog-mode")
+  (whitespace-mode -1)
+  (flyspell-mode -1)
+  ;; (flyspell-prog-mode -1)
   (rainbow-delimiters-mode 1)
-  (flymake-mode 1)
   (linum-mode 1)
-  ;;  (ruby-block-mode -1)
+  (fci-mode 1)
+  (myfixme-mode 1)
+  ;; (flymake-mode 1)
   )
 (add-hook 'prelude-prog-mode-hook 'x4--after-prog-mode t)
-;(add-hook 'prelude-prog-mode-hook 'flyspell-mode)
-;(add-hook 'prelude-prog-mode-hook 'flyspell-prog-mode)
-
-(remove-hook 'message-mode-hook 'prelude-turn-on-flyspell)
-(remove-hook 'text-mode-hook 'prelude-turn-on-flyspell)
 
 ;; WTF?! why is this needed for linum to work in CPerl?
-(add-hook 'cperl-mode-hook
-  (lambda() (linum-mode 1)))
+;; cperl-mode probobly dosn't derivie from prog-mode
+(add-hook 'cperl-mode-hook (lambda ()
+                             (prelude-prog-mode-defaults)
+                             (x4--after-prog-mode)
+                             (run-hooks 'prelude-prog-mode-hook)
+                             ))
+
+
+(remove-hook 'message-mode-hook 'flyspell-mode)
+(remove-hook 'text-mode-hook 'flyspell-mode)
 
 (global-set-key [home] 'x4-smarter-beginning-of-line)
 (global-set-key "\C-a" 'x4-smarter-beginning-of-line)
-					;;(global-set-key [(shift insert)] 'x4-yank-primary-at-point)
+(global-set-key [(shift insert)] 'x4-yank-primary-at-point)
 
 
 (autoload 'template-mode "template-mode")
