@@ -257,6 +257,9 @@
                                        (set-window-point (selected-window) pos)
                                        )))
 
+
+(load (concat x4--personal-vendor-path "nxhtml/autostart.el"))
+
 (delete-selection-mode 1)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
