@@ -204,7 +204,8 @@
 
 (autoload 'template-mode "template-mode")
 (setq auto-mode-alist
-(append '(("\\.tt$" . template-mode)) auto-mode-alist ))
+      (append '(("\\.tt$" . template-mode)) auto-mode-alist ))
+
 
 (require 'jabber)
 (setq jabber-username "xalldux" ;; notice: leave off the @gmail.com
