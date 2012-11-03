@@ -211,11 +211,6 @@
                                           (select-window this-win)
                                           )))
 
-(autoload 'template-mode "template-mode")
-(setq auto-mode-alist
-      (append '(("\\.tt$" . template-mode)) auto-mode-alist ))
-
-
 (require 'jabber)
 (setq jabber-username "xalldux" ;; notice: leave off the @gmail.com
       jabber-server "gmail.com"     ;; this is a part of your user ID, not a part of the server you will connect to.
