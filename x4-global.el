@@ -4,14 +4,56 @@
       '("workgroups.el/" "eproject" "emacs-flymake-perlcritic" "nyan-mode"
         "emacs-skype" "emacs-minimap" "emacs-jabber" "myfixme" "golden-ratio.el/"))
 
+(setq-default mode-line-format
+              '("%e"
+                (:eval
+                 (if
+                     (display-graphic-p)
+                     #(" " 0 1
+                       (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))
+                   #("-" 0 1
+                     (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))))
+                mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification
+                #("  " 0 2
+                  (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))
+                mode-line-position
+                (which-func-mode
+                 ("" which-func-format))
+                (wg-mode-line-display-on
+                 (:eval
+                  (replace-regexp-in-string "no workgroups" "NWG" (wg-mode-line-string))))
+                (vc-mode vc-mode)
+                #(" " 0 1
+                  (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))
+                mode-line-modes
+                (global-mode-string
+                 ("" global-mode-string
+                  #("  " 0 2
+                    (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))))
+                (:eval
+                 (unless
+                     (display-graphic-p)
+                   #("-%-" 0 3
+                     (help-echo "mouse-1: Select (drag to resize)\nmouse-2: Make current window occupy the whole frame\nmouse-3: Remove current window from display"))))))
+
+(load-theme 'sanityinc-tomorrow-night t)
 (menu-bar-mode t)
-(setq default-frame-alist '((font . "Inconsolata-10")))
-(set-default-font "Inconsolata-10")
+(setq set-mark-command-repeat-pop 't)
+(setq default-frame-alist '((font . "Inconsolata-9")))
+(set-default-font "Inconsolata-9")
 (add-to-list 'package-archives
-	     '("SunriseCommander" . "http://joseito.republika.pl/sunrise-commander/"))
+             '("SunriseCommander" . "http://joseito.republika.pl/sunrise-commander/") t)
+(add-to-list 'package-archives
+             '("marmalade"        . "http://marmalade-repo.org/packages/") t
+             )
+
+
+;; moves point to the farthest possible position. If point is already there, the command signals an error.
+(setq scroll-error-top-bottom 't)
 
 ;; Dired+ - use it instead of regular dired
 (require 'dired+)
+(toggle-diredp-find-file-reuse-dir 1)
 
 ;; Sunrise Commander
 (require 'sunrise-commander)
@@ -87,7 +129,7 @@
  '(rainbow-delimiters-depth-3-face ((t (:foreground "RosyBrown"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "PaleGreen2"))))
  '(rainbow-delimiters-depth-5-face ((t (:foreground "DarkGoldenrod2"))))
- '(show-paren-match ((t (:underline "#73d216"))))
+ '(show-paren-match ((t (:inverse-video nil :underline "#73d216"))))
  '(show-paren-mismatch ((t (:underline "#ff1f18")))))
 
 
