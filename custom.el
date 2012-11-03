@@ -21,7 +21,7 @@
  '(fci-rule-color "gainsboro")
  '(fci-rule-column nil)
  '(font-use-system-font t)
- '(indent-tabs-mode t)
+ '(indent-tabs-mode nil)
  '(minimap-dedicated-window t)
  '(minimap-width-fraction 0.14)
  '(minimap-window-location (quote right))
@@ -30,6 +30,7 @@
  '(tab-always-indent (quote complete))
  '(w3m-accept-languages (quote ("pl" "en
 "))))
+ '(tab-width 4)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

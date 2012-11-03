@@ -68,10 +68,10 @@
 (custom-set-variables
  '(cperl-highlight-variables-indiscriminately t)
  '(display-time-mode t)
- '(indent-tabs-mode t)
+ '(indent-tabs-mode nil)
+ '(tab-width 4)
  '(show-paren-mode t)
  '(show-paren-style (quote expression))
- '(tab-always-indent (quote complete))
  )
 
 (require 'rainbow-delimiters)
