@@ -71,12 +71,6 @@
 ;; (define-key eproject-mode-map (kbd "C-c C-c p o") #'eproject-open-all-project-files)
 ;; (define-key dot-eproject-mode-map (kbd "C-c C-c p r") #'eproject-reinitialize-project)
 
-;; Workgroups configs
-(require 'workgroups)
-(setq wg-prefix-key (kbd "C-z"))
-(setq wg-morph-on nil)
-(workgroups-mode t)
-
 ;;(require 'skype)
 ;;(setq skype--my-user-handle "x4lldux")
 
@@ -195,6 +189,26 @@
 (smex-initialize)
 (global-set-key (kbd "<menu>") 'smex)
 (global-set-key (kbd "M-x") 'smex)
+
+;; Workgroups configs
+(require 'workgroups)
+(setq wg-default-session-file "~/.emacs.d/savefile/default-workgroups-session")
+(setq wg-prefix-key (kbd "C-z"))
+(setq wg-morph-on nil)
+(workgroups-mode t)
+
+
+;; Scroll by a single line
+(global-set-key (kbd "S-M-<down>")  '(lambda () (interactive)
+                                       (let ((pos (point)))
+                                         (scroll-down-line)
+                                         (set-window-point (selected-window) pos)
+                                         )))
+(global-set-key (kbd "S-M-<up>")  '(lambda () (interactive)
+                                     (let ((pos (point)))
+                                       (scroll-up-line)
+                                       (set-window-point (selected-window) pos)
+                                       )))
 
 (delete-selection-mode 1)
 (require 'multiple-cursors)
