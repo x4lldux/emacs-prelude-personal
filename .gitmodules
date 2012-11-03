@@ -1,0 +1,24 @@
+[submodule "vendor/golden-ratio.el"]
+	path = vendor/golden-ratio.el
+	url = https://github.com/roman/golden-ratio.el.git
+[submodule "vendor/elscreen"]
+	path = vendor/elscreen
+	url = https://github.com/knu/elscreen.git
+[submodule "vendor/emacs-flymake-perlcritic"]
+	path = vendor/emacs-flymake-perlcritic
+	url = https://github.com/illusori/emacs-flymake-perlcritic.git
+[submodule "vendor/emacs-minimap"]
+	path = vendor/emacs-minimap
+	url = https://github.com/dustinlacewell/emacs-minimap.git
+[submodule "vendor/emacs-skype"]
+	path = vendor/emacs-skype
+	url = https://github.com/gtp/emacs-skype.git
+[submodule "vendor/eproject"]
+	path = vendor/eproject
+	url = https://github.com/jrockway/eproject.git
+[submodule "vendor/nyan-mode"]
+	path = vendor/nyan-mode
+	url = https://github.com/TeMPOraL/nyan-mode.git
+[submodule "vendor/workgroups.el"]
+	path = vendor/workgroups.el
+	url = https://github.com/dabrahams/workgroups.el.git
