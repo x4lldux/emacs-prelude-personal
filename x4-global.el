@@ -77,6 +77,15 @@
 (require 'w3m-load)
 (require 'minimap)
 
+;;; Golden ratio
+(require 'golden-ratio)
+(defadvice x4--golden-ratio-after-other-window (after other-window)
+  "Use Golden Ratio to resize windows."
+  (golden-ratio)
+  (message "x4-advice"))
+;;(ad-enable-advice 'other-window 'after 'x4--golden-ratio-after-other-window)
+;;(ad-activate 'x4--golden-ratio-after-other-window)
+
 ;; Load ElScreen
 ;;(load "elscreen" "ElScreen" t)
 ;;(require 'elscreen-w3m)
