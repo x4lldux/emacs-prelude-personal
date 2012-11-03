@@ -1,9 +1,6 @@
 [submodule "vendor/golden-ratio.el"]
 	path = vendor/golden-ratio.el
 	url = https://github.com/roman/golden-ratio.el.git
-[submodule "vendor/elscreen"]
-	path = vendor/elscreen
-	url = https://github.com/knu/elscreen.git
 [submodule "vendor/emacs-flymake-perlcritic"]
 	path = vendor/emacs-flymake-perlcritic
 	url = https://github.com/illusori/emacs-flymake-perlcritic.git
@@ -22,3 +19,6 @@
 [submodule "vendor/workgroups.el"]
 	path = vendor/workgroups.el
 	url = https://github.com/dabrahams/workgroups.el.git
+[submodule "vendor/elscreen"]
+	path = vendor/elscreen
+	url = https://github.com/knu/elscreen.git
