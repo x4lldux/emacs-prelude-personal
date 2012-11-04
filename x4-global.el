@@ -93,7 +93,6 @@
 ;;(require 'elscreen-color-theme)
 
 
-(setq stack-trace-on-error t)
 ;;(ecb-activate)
 
 ;; Nyan cat mode
@@ -253,8 +252,13 @@
                                        )))
 
 
+;; nXhtml
 (load (concat x4--personal-vendor-path "nxhtml/autostart.el"))
+;; nXhtml sets debugging mode on
+(setq debug-on-error nil)
+(setq debug-on-signal nil)
 
+;; multiple cursors
 (delete-selection-mode 1)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
