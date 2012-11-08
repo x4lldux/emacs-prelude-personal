@@ -71,8 +71,8 @@
 ;; (define-key eproject-mode-map (kbd "C-c C-c p o") #'eproject-open-all-project-files)
 ;; (define-key dot-eproject-mode-map (kbd "C-c C-c p r") #'eproject-reinitialize-project)
 
-;;(require 'skype)
-;;(setq skype--my-user-handle "x4lldux")
+;; (require 'skype)
+;; (setq skype--my-user-handle "x4lldux")
 
 (require 'w3m-load)
 (require 'minimap)
