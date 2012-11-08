@@ -51,17 +51,17 @@
 ;; moves point to the farthest possible position. If point is already there, the command signals an error.
 (setq scroll-error-top-bottom 't)
 
-;; Dired+ - use it instead of regular dired
+;;; Dired+ - use it instead of regular dired
 (require 'dired+)
 (toggle-diredp-find-file-reuse-dir 1)
 
-;; Sunrise Commander
+;;; Sunrise Commander
 (require 'sunrise-commander)
 (require 'sunrise-x-popviewer)
 (require 'sunrise-x-loop)
 (require 'sunrise-x-mirror)
 
-;; ;; Eproject
+;;; Eproject
 ;; (require 'eproject)
 ;; (require 'eproject-extras)
 ;; (define-key eproject-mode-map (kbd "C-c C-c p f") #'eproject-find-file)
@@ -95,14 +95,15 @@
 
 ;;(ecb-activate)
 
-;; Nyan cat mode
+;;; Nyan cat mode
 (require 'nyan-mode)
 (nyan-mode t)
 ;;(nyan-start-animation)
 
-;; buffer-move
+;;; buffer-move
 (require 'buffer-move)
 
+;;; Flymake-perlcritic
 ;; If flymake_perlcritic isn't in your path.
 (setq flymake-perlcritic-command "~/.emacs.d/personal/emacs-flymake-perlcritic/bin/flymake_perlcritic")
 ;; Lets set it to be the most severe available.
@@ -118,6 +119,7 @@
  '(show-paren-style (quote expression))
  )
 
+;;; Rainbow delimiters
 (require 'rainbow-delimiters)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -137,7 +139,7 @@
 
 ;;(require `notify)
 
-;; Fill column indicator
+;;; Fill column indicator
 (setq fill-column 80)
 (setq default-fill-column 80)
 (require 'fill-column-indicator)
@@ -155,6 +157,7 @@
   )
 (add-hook 'prelude-text-mode-hook 'x4--after-text-mode t)
 
+;;; myfixme - TODO/FIXME indicator on right fringe
 (require 'myfixme)
 
 ;; General programming personallizations
@@ -209,7 +212,7 @@
                                           (buf-move-right)
                                           (select-window this-win)
                                           )))
-
+;;; Jabber
 (require 'jabber)
 (setq jabber-username "xalldux" ;; notice: leave off the @gmail.com
       jabber-server "gmail.com"     ;; this is a part of your user ID, not a part of the server you will connect to.
@@ -225,13 +228,13 @@
                              (:connection-type . ssl))
                             ))
 
-
+;;; Smex
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "<menu>") 'smex)
 (global-set-key (kbd "M-x") 'smex)
 
-;; Workgroups configs
+;;; Workgroups configs
 (require 'workgroups)
 (setq wg-default-session-file "~/.emacs.d/savefile/default-workgroups-session")
 (setq wg-prefix-key (kbd "C-z"))
@@ -239,7 +242,7 @@
 (workgroups-mode t)
 
 
-;; Scroll by a single line
+;;; Scroll by a single line
 (global-set-key (kbd "S-M-<down>")  '(lambda () (interactive)
                                        (let ((pos (point)))
                                          (scroll-down-line)
@@ -252,13 +255,13 @@
                                        )))
 
 
-;; nXhtml
+;;; nXhtml
 (load (concat x4--personal-vendor-path "nxhtml/autostart.el"))
 ;; nXhtml sets debugging mode on
 (setq debug-on-error nil)
 (setq debug-on-signal nil)
 
-;; multiple cursors
+;;; multiple cursors
 (delete-selection-mode 1)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -266,7 +269,7 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; Org-mode
+;;; Org-mode
 (require 'org-install)
 (setq org-directory "~/emacs.d/personal/org")
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
