@@ -279,3 +279,6 @@
 (setq org-replace-disputed-keys t)
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
+
+(add-to-list 'load-path "cperl-extras")
+(require 'cperl-extras)
