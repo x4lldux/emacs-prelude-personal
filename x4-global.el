@@ -47,7 +47,6 @@
              '("marmalade"        . "http://marmalade-repo.org/packages/") t
              )
 
-
 ;; moves point to the farthest possible position. If point is already there, the command signals an error.
 (setq scroll-error-top-bottom 't)
 
@@ -290,6 +289,10 @@
 
 (add-to-list 'load-path "cperl-extras")
 (require 'cperl-extras)
+
+;;; switch-window
+(require 'switch-window)
+(setq switch-window-shortcut-style 'qwerty)
 
 ;;; add auto major-mode for bash's edit-and-execute-command
 (add-to-list 'auto-mode-alist '("^/tmp/bash-fc" . sh-mode))
