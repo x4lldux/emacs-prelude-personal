@@ -133,3 +133,8 @@
       (error "No selection is available"))
     (push-mark (point))
     (insert primary)))
+
+(defun x4-comment-line ()
+  "Comments line."
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))

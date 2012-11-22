@@ -290,3 +290,4 @@
 
 (add-to-list 'load-path "cperl-extras")
 (require 'cperl-extras)
+(global-set-key (kbd "C-M-;") 'x4-comment-line)
