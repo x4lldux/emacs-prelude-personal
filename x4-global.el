@@ -290,4 +290,8 @@
 
 (add-to-list 'load-path "cperl-extras")
 (require 'cperl-extras)
+
+;;; add auto major-mode for bash's edit-and-execute-command
+(add-to-list 'auto-mode-alist '("^/tmp/bash-fc" . sh-mode))
+
 (global-set-key (kbd "C-M-;") 'x4-comment-line)
